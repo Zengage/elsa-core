@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+<Project Sdk="Microsoft.NET.Sdk.Razor">
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -20,6 +20,15 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Content Remove="Areas\Elsa\Views\Shared\_Layout.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Theme\argon-dashboard\assets\js\workflow-editor.js" />
+      <None Remove="Theme\argon-dashboard\assets\js\workflow-instance-viewer.js" />
+    </ItemGroup>
+
+    <ItemGroup>
         <None Include="icon.png">
             <Pack>True</Pack>
             <PackagePath />
@@ -28,12 +37,6 @@
 
     <ItemGroup>
         <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\..\core\Elsa.Abstractions\Elsa.Abstractions.csproj" />
-        <ProjectReference Include="..\..\core\Elsa.Core\Elsa.Core.csproj" />
-        <ProjectReference Include="..\Elsa.WorkflowDesigner\Elsa.WorkflowDesigner.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -75,6 +78,17 @@
       <_ContentIncludedByDefault Remove="wwwroot\assets\js\plugins\nucleo\fonts\nucleo-icons.woff2" />
       <_ContentIncludedByDefault Remove="wwwroot\assets\js\workflow-editor.js" />
       <_ContentIncludedByDefault Remove="wwwroot\assets\js\workflow-instance-viewer.js" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="Theme\argon-dashboard\assets\js\workflow-editor.js" />
+      <Content Include="Theme\argon-dashboard\assets\js\workflow-instance-viewer.js" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Elsa.Abstractions" Version="1.5.3.1369" />
+      <PackageReference Include="Elsa.Core" Version="1.5.3.1369" />
+      <PackageReference Include="Elsa.WorkflowDesigner" Version="1.5.3.1369" />
     </ItemGroup>
 
 </Project>
